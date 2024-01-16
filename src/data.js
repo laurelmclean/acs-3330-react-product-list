@@ -23,8 +23,6 @@ const categoriesWithCounts = data.reduce((obj, item) => {
     return obj;
 }, {});
 
-console.log(categoriesWithCounts);
-
 // The default export
 export default data;
 
