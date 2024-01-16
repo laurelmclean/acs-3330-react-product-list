@@ -3,9 +3,16 @@ import data, { allCategories, categoriesUnique, categoriesWithCounts } from './d
 
 function App() {
 
+  const categoryButtonsMarkup = categoriesUnique.map((btn) => <button>{btn}</button>)
+  const allProducts = data.map((obj) => <div>      
+    <h1>{obj.name}</h1>
+    <p>{obj.name}</p>
+    <p>{obj.price}</p></div>);
+
   return (
     <>
-      {categoriesUnique.map((btn) => <button>{btn}</button>)}
+      {categoryButtonsMarkup}
+      {allProducts}
     </>
   );
 }
