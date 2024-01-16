@@ -1,19 +1,37 @@
+import { useState } from 'react';
 import './App.css';
-import data, { allCategories, categoriesUnique, categoriesWithCounts } from './data'
+import data, { categoriesUnique } from './data'
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categoryButtonsMarkup = categoriesUnique.map((btn) => <button>{btn}</button>)
-  const allProducts = data.map((obj) => <div>      
-    <h1>{obj.name}</h1>
-    <p>{obj.name}</p>
-    <p>{obj.price}</p></div>);
+  const handleCategoryClick = (categoryName) => {
+    setSelectedCategory(categoryName);
+  };
+
+  const filteredData = selectedCategory === 'All' ? data : data.filter(product => product.category === selectedCategory);
+
+  const buttonMarkup = categoriesUnique.map((category, index) => (
+    <button key={index} className="category-button" onClick={() => handleCategoryClick(category)}>
+      {category}
+    </button>
+  ));
+
+  const productMarkup = filteredData.map((product) => (
+    <div key={product.id} className="product">
+      <h2>{product.name}</h2>
+      <p>{product.category}</p>
+      <p>{product.price}</p>
+    </div>
+  ));
 
   return (
-    <>
-      {categoryButtonsMarkup}
-      {allProducts}
-    </>
+    <div className="App">
+        {buttonMarkup}
+        <div>
+          {productMarkup}
+        </div>
+    </div>
   );
 }
 
