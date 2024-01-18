@@ -1,0 +1,21 @@
+.product {
+    width: 300px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.product h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+.product p {
+    margin: 0;
+    color: #333;
+}

@@ -17,7 +17,8 @@ function App() {
     <CategoryButton 
       key={index} 
       label={category}
-      onClick={() => handleCategoryClick(category)} />
+      onClick={() => handleCategoryClick(category)}
+      isSelected={selectedCategory.includes(category.name)} />
   ));
 
   const productMarkup = filteredData.map((product) => (
@@ -27,6 +28,11 @@ function App() {
   return (
     <div className="App">
       <div className='CategoryList'>
+        <CategoryButton
+          label="All"
+          onClick={() => handleCategoryClick('All')}
+          isSelected={selectedCategory.includes('All')}
+        />
         {buttonMarkup}
         </div>
         <div className='ProductList'>
