@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import data, { categoriesUnique } from './data'
+import CategoryButton from './CategoryButton/CategoryButton';
+import Product from './Product/Product';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -12,17 +14,14 @@ function App() {
   const filteredData = selectedCategory === 'All' ? data : data.filter(product => product.category === selectedCategory);
 
   const buttonMarkup = categoriesUnique.map((category, index) => (
-    <button key={index} className="category-button" onClick={() => handleCategoryClick(category)}>
-      {category}
-    </button>
+    <CategoryButton 
+      key={index} 
+      label={category}
+      onClick={() => handleCategoryClick(category)} />
   ));
 
   const productMarkup = filteredData.map((product) => (
-    <div key={product.id} className="product">
-      <h2>{product.name}</h2>
-      <p>{product.category}</p>
-      <p>{product.price}</p>
-    </div>
+    <Product product={product} />
   ));
 
   return (
