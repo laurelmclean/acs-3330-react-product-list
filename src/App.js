@@ -26,8 +26,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className='CategoryList'>
         {buttonMarkup}
-        <div>
+        </div>
+        <div className='ProductList'>
           {productMarkup}
         </div>
     </div>
