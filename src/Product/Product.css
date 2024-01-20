@@ -9,6 +9,17 @@
     transition: box-shadow 0.3s, border-color 0.3s;
 }
 
+.disabled {
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: grey;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
 .product h2 {
     font-size: 20px;
     margin-bottom: 10px;
@@ -16,6 +27,17 @@
 }
 
 .product p {
+    margin: 0;
+    color: #333;
+}
+
+.disabled h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.disabled p {
     margin: 0;
     color: #333;
 }

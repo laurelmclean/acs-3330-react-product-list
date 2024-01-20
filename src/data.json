@@ -5,7 +5,7 @@
   "description": "Persevering systematic core",
   "price": "$12.07",
   "rating": 3.0,
-  "units": 632
+  "units": 0
 }, {
   "id": 2,
   "name": "Lotstring",
@@ -93,7 +93,7 @@
   "description": "Multi-tiered 3rd generation installation",
   "price": "$83.68",
   "rating": 3.9,
-  "units": 951
+  "units": 0
 }, {
   "id": 13,
   "name": "Bamity",
@@ -773,7 +773,7 @@
   "description": "Expanded analyzing ability",
   "price": "$19.34",
   "rating": 0.7,
-  "units": 802
+  "units": 0
 }, {
   "id": 98,
   "name": "Regrant",
@@ -781,7 +781,7 @@
   "description": "Virtual context-sensitive definition",
   "price": "$196.32",
   "rating": 2.6,
-  "units": 76
+  "units": 0
 }, {
   "id": 99,
   "name": "Redhold",
@@ -789,7 +789,7 @@
   "description": "Persevering next generation extranet",
   "price": "$34.05",
   "rating": 4.9,
-  "units": 402
+  "units": 0
 }, {
   "id": 100,
   "name": "Transcof",

@@ -1,10 +1,13 @@
 .App {
   text-align: center;
+  background-color: rgb(238, 205, 145)
 }
 
 .CategoryList {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+    padding: 20px;
 }
 
 .ProductList {
@@ -16,4 +19,8 @@
 .selected-category {
   font-weight: bold;
   color: red;
+}
+
+.App h1 {
+  color: white;
 }

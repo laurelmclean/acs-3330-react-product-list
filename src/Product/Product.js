@@ -6,12 +6,15 @@ function starRating(rating) {
     return '★'.repeat(roundedRating);
 }
 function Product({ product }) {
+
+    const classname = product.units === 0 ? 'disabled' : "product";
     
     return (
-        <div key={product.id} className="product">
+        <div key={product.id} className={classname}>
             <h2>{product.name}</h2>
             <p>{product.category}</p>
             <p>{product.price}</p>
+            <p>Units: {product.units}</p>
             <p>{starRating(product.rating)}</p>
         </div>
     );

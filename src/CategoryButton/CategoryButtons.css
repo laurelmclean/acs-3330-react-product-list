@@ -24,3 +24,11 @@ button:hover {
     color: #fff;
     border-color: #fff;
 }
+
+.count-badge {
+    background-color: rgb(238, 205, 145);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+}

@@ -5,13 +5,25 @@ import CategoryButton from './CategoryButton/CategoryButton';
 import Product from './Product/Product';
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
 
+  const [selectedCategories, setSelectedCategories] = useState(['All']);
+
+  // Event handler for clicking on a category
   const handleCategoryClick = (categoryName) => {
-    setSelectedCategory(categoryName);
+    if (categoryName === 'All') {
+      setSelectedCategories(['All']);
+    } else {
+      setSelectedCategories(prevCategories => {
+        if (prevCategories.includes(categoryName)) {
+          return prevCategories.filter(category => category !== categoryName);
+        } else {
+          return [...prevCategories.filter(category => category !== 'All'), categoryName];
+        }
+      });
+    }
   };
 
-  const filteredData = selectedCategory === 'All' ? data : data.filter(product => product.category === selectedCategory);
+  const filteredData = selectedCategories.includes('All') ? data : data.filter(product => selectedCategories.includes(product.category));
 
   const totalSum = data.reduce((sum, item) => {
     const price = parseFloat(item.price.slice(1));
@@ -28,13 +40,14 @@ function App() {
     counts[category] = (counts[category] || 0) + 1;
     return counts;
   }, {});
+
   
   const buttonMarkup = categoriesUnique.map((category, index) => (
     <CategoryButton 
       key={index} 
       label={category}
       onClick={() => handleCategoryClick(category)}
-      isSelected={selectedCategory.includes(category.name)}
+      isSelected={selectedCategories.includes(category)}
       count={productsPerCategory[category]} />
   ));
 
@@ -49,7 +62,7 @@ function App() {
         <CategoryButton
           label="All"
           onClick={() => handleCategoryClick('All')}
-          isSelected={selectedCategory.includes('All')}
+          isSelected={selectedCategories.includes('All')}
           count={data.length}
         />
         {buttonMarkup}
